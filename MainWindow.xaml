@@ -13,13 +13,14 @@
             <TabItem Header="Programme">
                 <!--<Border Background="Aqua" BorderBrush="Black" BorderThickness="1" Padding="5" Grid.ColumnSpan="2"/>-->
 
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Border BorderBrush="Black" BorderThickness="1" />
-                    <DataGrid  x:Name="ProgTable" ItemsSource="{Binding students}" BorderBrush="Black"  AutoGenerateColumns="True" BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="172*"/>
+                        <ColumnDefinition Width="225*"/>
+                        <ColumnDefinition Width="397*"/>
+                    </Grid.ColumnDefinitions>
+                    <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" />
+                    <DataGrid  x:Name="ProgTable" ItemsSource="{Binding students}" BorderBrush="Black"  AutoGenerateColumns="True" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Grid.ColumnSpan="2" >
                         <Border BorderBrush="Black" BorderThickness="2"/>
                         <!--styling -->
 
@@ -41,13 +42,13 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="49,62,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ca" Text="Nom du programme"/></TextBlock>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="49,114,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ca" Text="Numero du programme"/></TextBlock>
-                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="49,165,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Text="Duree du programme"/>
-                    <TextBox x:Name="leNom" Grid.Column="1" HorizontalAlignment="Left" Margin="221,62,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-                    <TextBox x:Name="leNum" Grid.Column="1" HorizontalAlignment="Left" Margin="221,165,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="laDuree" Grid.Column="1" HorizontalAlignment="Left" Margin="221,112,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <Button Grid.Column="1" Content="Ajouter programme"  Margin="0,213,0,0" Grid.Row="1"  Width="140"  Height="40" Click="Button_Click">
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="49,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ca" Text="Nom du programme"/></TextBlock>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="49,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ca" Text="Numero du programme"/></TextBlock>
+                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="49,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Duree du programme"/>
+                    <TextBox x:Name="leNom" Grid.Column="2" HorizontalAlignment="Left" Margin="221,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+                    <TextBox x:Name="leNum" Grid.Column="2" HorizontalAlignment="Left" Margin="221,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="laDuree" Grid.Column="2" HorizontalAlignment="Left" Margin="221,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <Button Grid.Column="2" Content="Ajouter programme"  Margin="129,287,128,74"  Width="140"  Height="40" Click="Button_Click">
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
                                 <Border CornerRadius="25" Background="#cacbff" BorderBrush="Black" BorderThickness="1">
@@ -60,17 +61,58 @@
 
             </TabItem>
 
-                <TabItem Header="stagaire"/>
-                <TabItem Header="consulter"/>
+            <TabItem Header="stagaire"/>
+            <TabItem Header="consulter">
+                <Grid>
 
-            </TabControl>
+                    <Label Content="Sélectionnez un programme:" HorizontalAlignment="Right" Margin="20,20,20,0" FontSize="16"/>
+                    <ComboBox x:Name="cmbProgrammes" HorizontalAlignment="Right"  Margin="0,45,20,320" Width="210" />
+
+                    <Button Content="Rechercher" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="460,45,0,0" />
+                    <DataGrid  x:Name="listeStagiaires" HorizontalAlignment="Center" VerticalAlignment="Top" Width="740" Margin="20,100,20,0" BorderThickness="2" AutoGenerateColumns="True">
+                        <Border BorderBrush="Black" BorderThickness="2"/>
+                        <!--styling -->
+
+                        <DataGrid.Resources>
+                            <Style TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="Background" Value="Turquoise"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                                <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                                <Setter Property="BorderBrush" Value="Black"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
 
 
-       
-
-        
+                            </Style>
 
 
-        </Grid>
-       
+                        </DataGrid.Resources>
+
+                        <!--header of tables and styling -->
+                        <DataGrid.Columns  >
+
+                            <DataGridTextColumn Header="Nom" Width="*"  />
+                            <DataGridTextColumn Header="Prénom" Width="*" />
+                            <DataGridTextColumn Header="Date de Naissance" Width="1.5*"  />
+                            <DataGridTextColumn Header="Programme" Width="*" />
+                            <DataGridTextColumn Header="Encadrant" Width="*" />
+                            <DataGridTextColumn Header="Matricule" Width="*" />
+                            <DataGridTextColumn Header="Sexe" Width="*" />
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                   
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+
+
+
+
+
+
+    </Grid>
+
 </Window>

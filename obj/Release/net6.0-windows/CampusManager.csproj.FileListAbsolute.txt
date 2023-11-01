@@ -19,3 +19,23 @@ C:\Users\eddin\OneDrive\Desktop\Session3\Structure de donne\CampusManager\obj\Re
 C:\Users\eddin\OneDrive\Desktop\Session3\Structure de donne\CampusManager\obj\Release\net6.0-windows\CampusManager.pdb
 C:\Users\eddin\OneDrive\Desktop\Session3\Structure de donne\CampusManager\obj\Release\net6.0-windows\CampusManager.genruntimeconfig.cache
 C:\Users\eddin\OneDrive\Desktop\Session3\Structure de donne\CampusManager\obj\Release\net6.0-windows\ref\CampusManager.dll
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\MainWindow.g.cs
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\App.g.cs
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\CampusManager_MarkupCompile.cache
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\CampusManager_MarkupCompile.lref
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\CampusManager.dll
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\refint\CampusManager.dll
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\CampusManager.pdb
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\bin\Release\net6.0-windows\CampusManager.exe
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\bin\Release\net6.0-windows\CampusManager.deps.json
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\bin\Release\net6.0-windows\CampusManager.runtimeconfig.json
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\bin\Release\net6.0-windows\CampusManager.dll
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\bin\Release\net6.0-windows\CampusManager.pdb
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\MainWindow.baml
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\CampusManager.g.resources
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\CampusManager.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\CampusManager.AssemblyInfoInputs.cache
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\CampusManager.AssemblyInfo.cs
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\CampusManager.csproj.CoreCompileInputs.cache
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\CampusManager.genruntimeconfig.cache
+C:\Users\larhr\Code\Applications bureau\projet\Shcool_Manager\obj\Release\net6.0-windows\ref\CampusManager.dll
