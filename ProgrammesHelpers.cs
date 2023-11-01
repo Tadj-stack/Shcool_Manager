@@ -5,7 +5,7 @@ using System.IO;
 internal static class ProgrammesHelpers
 {
 
-    public static List<Progra> GetProgras()
+   /* public static List<Progra> GetProgras()
     {
 
         var file = @"C:\Users\eddin\OneDrive\Desktop\Informatique,PROG-001,4 ans.txt";
@@ -23,5 +23,5 @@ internal static class ProgrammesHelpers
             list.Add(progr);
         }
         return list;
-    }
+    }*/
 }
