@@ -10,86 +10,237 @@
 
     <Grid>
         <TabControl>
+            <TabItem Header="Acceuil">
+                <StackPanel Orientation="Horizontal" Background="SkyBlue">
+
+                    <TextBlock  FontStyle="Oblique" FontFamily="Garamond" Padding="5"  Margin="10,10,10,10" Height="220" FontSize="22" TextWrapping="Wrap" Width="348"><Run Text="Bienvenue dans votre nouvelle application de Gestion des Stagiaires et des Programmes!"/><LineBreak /><LineBreak /><Run Text="Simplifiez la gestion des programmes et des stagiaires, le tout en un seul endroit convivial."/></TextBlock>
+
+                    <TextBlock FontFamily="Garamond" Padding="5" Height="246" FontSize="22" TextWrapping="Wrap" Width="401" RenderTransformOrigin="-0.043,0.438"><Run Text="Pour naviguer dans l'application, vous trouverez trois onglets en haut à gauche." FontWeight="Bold"/><LineBreak/><Run/><LineBreak/><Run Text="Pour ajouter un stagiaire : " FontWeight="Bold" FontStyle="Italic"/><LineBreak/><Run Text="Cliquez sur l'onglet 'Stagiaire'."/><LineBreak/><Run Text="Pour ajouter un programme : " FontWeight="Bold" FontStyle="Italic"/><LineBreak/><Run Text="Cliquez sur l'onglet 'Programme'."/><LineBreak/><Run Text="Pour rechercher un stagiaire : " FontWeight="Bold" FontStyle="Italic"/><LineBreak/><Run Text="Cliquez sur l'onglet 'Consulter'.&quot;"/></TextBlock>
+                </StackPanel>
+
+            </TabItem>
             <TabItem Header="Programme">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="Veuillez remplir le formulaire pour ajouter un programme" HorizontalAlignment="Left"  FontSize="16" FontWeight="Bold"  />
+
+                    <Grid Grid.Row="1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="0" Text="Nom du programme "/>
+                        <TextBox x:Name="NomP" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Margin="26,0,0,0" Width="152" Grid.Column="1"   />
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="2" Text="Numero du programme"/>
+                        <TextBox x:Name="nump" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Margin="26,0,0,0" Width="152" Grid.Column="3"   />
+                    </Grid>
+                    <Grid Grid.Row="2" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="0" Text="Duree du programme"/>
+                        <TextBox x:Name="duree" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Margin="26,0,0,0" Width="152" Grid.Column="1"  />
+
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <DataGrid  x:Name="ProgTabl" BorderBrush="Black"   BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,20,10,0" Height="42" Width="Auto" >
+                            <Border BorderBrush="Black" BorderThickness="2"/>
+                            <!--styling -->
+
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="LightGreen"/>
+                                    <Setter Property="FontWeight" Value="SemiBold"/>
+                                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                                    <Setter Property="BorderBrush" Value="Black"/>
+
+                                </Style>
+                            </DataGrid.Resources>
+
+                            <!--header of tables and styling -->
+                            <DataGrid.Columns  >
+                                <DataGridTextColumn Width="*" Header=" Numéro de programme" Binding="{Binding NomDuProg}"/>
+                                <DataGridTextColumn Width="*" Header=" Nom de programme" Binding="{Binding NumDuProg}"/>
+                                <DataGridTextColumn Width="*" Header=" Duree de programme" Binding="{Binding DureeDuProg}"/>
+                            </DataGrid.Columns>
+
+                        </DataGrid>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Button Content="Ajouter " Margin="317,0,321,0" VerticalAlignment="Center" Height="39"  >
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border CornerRadius="25" Background="SkyBlue" BorderBrush="Black" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                    </Grid>
+                </Grid>
                 <!--<Border Background="Aqua" BorderBrush="Black" BorderThickness="1" Padding="5" Grid.ColumnSpan="2"/>-->
 
+
+
+            </TabItem>
+
+
+            <TabItem Header="stagiaire" HorizontalAlignment="Center" >
+
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="172*"/>
-                        <ColumnDefinition Width="225*"/>
-                        <ColumnDefinition Width="397*"/>
-                    </Grid.ColumnDefinitions>
-                    <Border BorderBrush="Black" BorderThickness="1" Grid.ColumnSpan="2" />
-                    <DataGrid  x:Name="ProgTable" ItemsSource="{Binding students}" BorderBrush="Black"  AutoGenerateColumns="True" BorderThickness="1" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,20,0,0" Grid.ColumnSpan="2" >
-                        <Border BorderBrush="Black" BorderThickness="2"/>
-                        <!--styling -->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Row="0" Content="Entrez ves informations puis choisissez votre programme et entrez le nom de votre encadrant." HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="16" FontWeight="Bold"/>
 
-                        <DataGrid.Resources>
-                            <Style TargetType="{x:Type DataGridColumnHeader}">
-                                <Setter Property="Background" Value="Turquoise"/>
-                                <Setter Property="FontWeight" Value="SemiBold"/>
-                                <Setter Property="BorderThickness" Value="0,0,1,2"/>
-                                <Setter Property="BorderBrush" Value="Black"/>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="0" Text="Nom "/>
+                        <TextBox x:Name="Nom" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Margin="26,0,0,0" Width="152" Grid.Column="1"   />
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="2" Text="Date de naissance"/>
+                        <DatePicker Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="0" Text="Prénom"/>
+                        <TextBox x:Name="prenom" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Margin="26,0,0,0" Width="152" Grid.Column="1"  />
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="2" Text="Sexe"/>
+                        <ComboBox Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="114" />
+                    </Grid>
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="0" Text="Encadrant"/>
+                        <TextBox x:Name="Encadrant" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Margin="26,0,0,0" Width="152" Grid.Column="1"  />
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="2" Text="Programme"/>
+                        <ComboBox Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Center" Width="114" />
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <DataGrid  x:Name="Prog" BorderBrush="Black"   BorderThickness="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,20,10,0" Height="42" Width="Auto" >
+                            <Border BorderBrush="Black" BorderThickness="2"/>
+                            <!--styling -->
 
-                            </Style>
-                        </DataGrid.Resources>
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="Background" Value="LightGreen"/>
+                                    <Setter Property="FontWeight" Value="SemiBold"/>
+                                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                                    <Setter Property="BorderBrush" Value="Black"/>
 
-                        <!--header of tables and styling -->
-                        <DataGrid.Columns  >
-                            <DataGridTextColumn Header=" Numéro de programme" Binding="{Binding NomDuProg}"/>
-                            <DataGridTextColumn Header=" Nom de programme" Binding="{Binding NumDuProg}"/>
-                            <DataGridTextColumn Header=" Duree de programme" Binding="{Binding DureeDuProg}"/>
-                        </DataGrid.Columns>
+                                </Style>
+                            </DataGrid.Resources>
 
-                    </DataGrid>
-                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="49,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ca" Text="Nom du programme"/></TextBlock>
-                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="49,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Language="en-ca" Text="Numero du programme"/></TextBlock>
-                    <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="49,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="Duree du programme"/>
-                    <TextBox x:Name="leNom" Grid.Column="2" HorizontalAlignment="Left" Margin="221,62,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
-                    <TextBox x:Name="leNum" Grid.Column="2" HorizontalAlignment="Left" Margin="221,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <TextBox x:Name="laDuree" Grid.Column="2" HorizontalAlignment="Left" Margin="221,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                    <Button Grid.Column="2" Content="Ajouter programme"  Margin="129,287,128,74"  Width="140"  Height="40" Click="Button_Click">
+                            <!--header of tables and styling -->
+                            <DataGrid.Columns  >
+                                <DataGridTextColumn Width="1.5*" Header=" Nom " Binding="{Binding NomDuProg}"/>
+                                <DataGridTextColumn Width="2*" Header=" Prénom" Binding="{Binding NomDuProg}"/>
+                                <DataGridTextColumn Width="2*" Header=" Date de naissance" Binding="{Binding NomDuProg}"/>
+                                <DataGridTextColumn Width="*" Header=" Sexe" Binding="{Binding NomDuProg}"/>
+                                <DataGridTextColumn Width="2*" Header=" Encadrant" Binding="{Binding NumDuProg}"/>
+                                <DataGridTextColumn Width="2*" Header=" Programme" Binding="{Binding DureeDuProg}"/>
+                            </DataGrid.Columns>
+
+                        </DataGrid>
+                    </Grid>
+                    <Button Grid.Row="5" Content="Ajouter " Margin="309,0,334,50" Grid.RowSpan="2" Click="Button_Click_1"  >
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <Border CornerRadius="25" Background="#cacbff" BorderBrush="Black" BorderThickness="1">
+                                <Border CornerRadius="25" Background="SkyBlue" BorderBrush="Black" BorderThickness="1">
                                     <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
                     </Button>
+
                 </Grid>
 
-            </TabItem>
 
-            <TabItem Header="stagaire"/>
+            </TabItem>
             <TabItem Header="consulter">
                 <Grid>
-
-                    <Label Content="Sélectionnez un programme:" HorizontalAlignment="Right" Margin="20,20,20,0" FontSize="16"/>
-                    <ComboBox x:Name="cmbProgrammes" HorizontalAlignment="Right"  Margin="0,45,20,320" Width="210" />
-
-                    <Button Content="Rechercher" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="460,45,0,0" />
-                    <DataGrid  x:Name="listeStagiaires" HorizontalAlignment="Center" VerticalAlignment="Top" Width="740" Margin="20,100,20,0" BorderThickness="2" AutoGenerateColumns="True">
+                    <!--Consignes et outils pour consulter -->
+                    <Grid Margin="0,0,0,276">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <!--le text des consignes -->
+                        <Label Content="Veuillez Sélectionner un programme et taper le nom du stagiaire que vous voulez consulter" HorizontalAlignment="Left" Margin="20,0,0,0" FontSize="16" FontWeight="Bold"/>
+                        <!--Outils de recherche -->
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="211*"/>
+                                <ColumnDefinition Width="222*"/>
+                                <ColumnDefinition Width="141*"/>
+                                <ColumnDefinition Width="220*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Choisir un programme:" HorizontalAlignment="Center" FontSize="16"/>
+                            <ComboBox x:Name="cmbProgrammes" Margin="10,0,10,0" Grid.Column="1"/>
+                            <Label Content="Nom du Stagiaire:" HorizontalAlignment="Center" FontSize="16" Grid.Column="2" />
+                            <TextBox Text="" Margin="10,0,10,0" Grid.Column="3"/>
+                        </Grid>
+                        <Grid Grid.Row="2">
+                            <Button  Content="Chercher" Margin="297,21,297,-49"  >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border CornerRadius="25" Background="SkyBlue" BorderBrush="Black" BorderThickness="1">
+                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </Grid>
+                    </Grid>
+                    <!--Affichage des données-->
+                    <DataGrid  x:Name="listeStagiaires" HorizontalAlignment="Center" VerticalAlignment="Top" Width="auto" Margin="20,140,20,0" BorderThickness="2" AutoGenerateColumns="True">
                         <Border BorderBrush="Black" BorderThickness="2"/>
-                        <!--styling -->
-
+                        <!--style -->
                         <DataGrid.Resources>
                             <Style TargetType="{x:Type DataGridColumnHeader}">
-                                <Setter Property="Background" Value="Turquoise"/>
+                                <Setter Property="Background" Value="LightGreen"/>
                                 <Setter Property="FontWeight" Value="SemiBold"/>
-                                <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                                <Setter Property="BorderThickness" Value="1,1,1,2"/>
                                 <Setter Property="BorderBrush" Value="Black"/>
                                 <Setter Property="HorizontalContentAlignment" Value="Center" />
-
-
                             </Style>
-
-
                         </DataGrid.Resources>
-
-                        <!--header of tables and styling -->
+                        <!--Definir les colones -->
                         <DataGrid.Columns  >
-
                             <DataGridTextColumn Header="Nom" Width="*"  />
                             <DataGridTextColumn Header="Prénom" Width="*" />
                             <DataGridTextColumn Header="Date de Naissance" Width="1.5*"  />
@@ -98,21 +249,12 @@
                             <DataGridTextColumn Header="Matricule" Width="*" />
                             <DataGridTextColumn Header="Sexe" Width="*" />
                         </DataGrid.Columns>
-
                     </DataGrid>
-                   
-
                 </Grid>
             </TabItem>
 
+
+
         </TabControl>
-
-
-
-
-
-
-
     </Grid>
-
 </Window>

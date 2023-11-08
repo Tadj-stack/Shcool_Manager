@@ -30,6 +30,11 @@ namespace CampusManager
             public string dureeDuprog { get; set; }
 
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
 
