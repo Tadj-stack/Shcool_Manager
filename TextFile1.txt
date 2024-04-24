@@ -1,0 +1,6 @@
+﻿1-ajouter les etudiant rechercher a la grid de la page consulter 
+2-lier la base des donnee a la application pour qelle montre des information pour confirmer que ca marche 
+3-insertion des programme et des stagiares dans la base des donnes 
+4-entiter association shema demonstration 
+5-fixer laffichage de la page consulter
+6- la table de jointure "ajouter la duree et le numero du programme" a la table stagiare
